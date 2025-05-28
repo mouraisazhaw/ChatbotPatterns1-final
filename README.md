@@ -15,7 +15,6 @@ Provides sentiment analysis for chatbot messages using:
 - **VADER**: Compound sentiment scores.
 - **Transformer Models**: Sentiment classification (e.g., DistilBERT, RoBERTa).
 
-
 ## Additional Analyses and Visualizations
 - **Escalation Analysis**: Detects escalation levels by host mode or topic.
 - **Pro-Con Visualization**: Compares sentiment and escalation trends between Pro-Bot and Con-Bot.
@@ -27,5 +26,24 @@ Provides sentiment analysis for chatbot messages using:
 2. Add your OpenAI API key to `.env`.
 3. Run analyses or visualizations using the provided scripts.
 
-## License
-This project is licensed under the MIT License.
+## Main Commands
+
+### Generate Conversations with Specific Parameters
+```bash
+python3 conversation_manager.py --num_conversations 1 --category "Politics" --host_mode "provocative" --api "openai"
+```
+- **`conversation_manager.py`**: Manages the generation of chatbot conversations.
+- **`--num_conversations`**: Specifies the number of conversations to generate (e.g., `1`).
+- **`--category`**: Sets the topic of the conversation (e.g., `"Politics"`).
+- **`--host_mode`**: Defines the chatbot's tone or behavior (e.g., `"provocative"`).
+- **`--api`**: Specifies the API to use for generating responses (e.g., `"openai"`).
+
+### Simulate Pro-Con Conversations
+```bash
+python chatbot2.py --mode pro-con --api openai --category "Religion" --mode-type extreme
+```
+- **`chatbot2.py`**: Handles advanced conversation simulations.
+- **`--mode`**: Sets the conversation type (e.g., `"pro-con"` for debates between Pro-Bot and Con-Bot).
+- **`--api`**: Specifies the API to use (e.g., `"openai"`).
+- **`--category`**: Defines the topic (e.g., `"Religion"`).
+- **`--mode-type`**: Adjusts the intensity of the conversation (e.g., `"extreme"` for highly polarized debates).
